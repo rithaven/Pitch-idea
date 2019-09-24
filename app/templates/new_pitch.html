@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wf.html' as wtf %}
+
+{% block content %}
+  <div class="container">
+    <a href="{{url_for('main.index')}}'">
+        <button type="button" class="btn btn-primary btn-sm" style="margin-bottom:10px">
+        </button>
+    </a>
+        {{wtf.quick_form(new_pitch_form)}}
+  </div>
+{% endlock%}
+
+ 
