@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% import 'macro.html' as macro %}
+
+{% block styles%}
+{{super() }}
+<link href="https://fonts.googleapis.com/css?family=Akronim|Bellefair|joti+One" rel="stylesheet">
+{% endblock %}
+{% block content %}
+ <div class="container" style="background-color:gainsboro; padding:20px; margin-top:0px; padding-top:40px; padding-bottom:400px;">
+   <div class="row" style="text-align:center; font-size:30px;">
+      <span style="font-size:40px; font-family: 'Akronim', cursive;">one minute Pitch</span>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+            <a href="{{url_for('main.interview')}}" style="font-family: 'joti One', cursive; font-size:20px;">
+              <br>
+              Interview Pitches
+            </a>
+            <br>
+            <a href="{{url_for{{'main.pick_up_line'}}" style="font-family: 'joti One', cursive; font-size:20px;">
+              <br>
+              Pick Up Lines
+            </a>
+            <br>
+            <a href="{{url_for('main.promotion')}}" style="font-family: 'joti One', cursive; font-size:20px;">
+              Promotion Pitches
+            </a>
+            <br>
+            <a href="{{url_for('main.production')}}" style="font-family: 'joti One', cursive; font-size:20px;">
+             <br>
+             Product Pitches
+            </a>
+            <br>
+    
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <div class="panel style=" style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
+      <p style="font-family: 'Bellefair', serif; font-size: 20px;"> Write your one minute in any of the categories bellow and comment on it. you can also vote on Pitches posted</p>
+     <div style="text-align:center;">
+      <a href="{{url-for('main.new_pitch')}}">
+        <br>
+        <span> Add a new Pitch</span>
+      </a>
+    </div>
+    </div>
+    </div>
+  </div>
+</hr>
+   <div class="all-pitches">
+     <span style="color:gainsboro;">All pitches are displayed below</span>
+     {{macro.displayPitches(pitches)}}
+   </div>
+  </div>
+{% endblock%}
