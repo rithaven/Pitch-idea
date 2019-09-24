@@ -69,7 +69,7 @@ def pitch(pitch_id):
     title = pitch_id
     pitch_comments =Comment.get_comments(pitch_id)
 
-    return render_template('pitch.html',title= title, found_pitch, pitch_comments= pitch_comments)
+    return render_template('pitch.html',title=title,found_pitch=found_pitch,pitch_comments= pitch_comments)
 
 @main.route('/search/<pitch_name>')
 def search(pitch_name):
@@ -82,7 +82,7 @@ def search(pitch_name):
 
     return render_template('search.html', pitches = searched_pitches) 
 
-@main.routre('/pitch/new/', methods = ['GET','POST'])
+@main.route('/pitch/new/', methods = ['GET','POST'])
 def new_pitch():
     '''
     Function that creates new pitches
@@ -95,7 +95,7 @@ def new_pitch():
 
     if form.validate_on_submit():
         pitch= form.content.data
-        category_id= from.category_id.data
+        category_id= form.category_id.data
         new_pitch=Pitch(pitch=pitch,category_id=category_id)
 
         new_pitch.save_pitch()
@@ -103,7 +103,7 @@ def new_pitch():
 
     return render_template('new_pitch.html', new_pitch_form=form, category=category)
 
-@main.route('/category/<int: id>')
+@main.route('/category/<int:id>')
 def category(id):
     '''
     function that returns pitches based on the entered category id
@@ -147,7 +147,7 @@ def profile(uname):
     form = UpdateProfile()
 
     if form.validate_on_submit():
-       user.bio = from.bio.data
+       user.bio = form.bio.data
 
        db.session.add(user)
        dd.session.commit()
@@ -155,7 +155,7 @@ def profile(uname):
        return redirect(url_for('.profile', uname=user.username))
     return render_template('profile/update.html', form =form)
 
-@main.route('/view/comment/<int: id>')
+@main.route('/view/comment/<int:id>')
 def view_comments(id):
     '''
     Function that returns the comments belonging to a particular pitch
