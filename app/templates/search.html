@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% import 'macro.html' as macro%}
+
+{% block content%}
+  <div class="row">
+    <div class="row">
+      <h3> Found {{profile| count }} mactches</h3>
+      <hr>
+      <ul>
+        {{macro.displayPitches(pitches)}}
+      </ul>
+     </div>
+  </div>
+{% endblock%}
