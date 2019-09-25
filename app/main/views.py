@@ -28,7 +28,7 @@ def interview():
     title = 'Home - Welcome to the best Pitching Website Online'
     return render_template('interview.html', title= title, pitches=pitches)
 
-@main.route('/pick_up_lines/pitches/')
+@main.route('/pick_up_line/pitches/')
 def pick_up_lines():
     '''
     View root page function that returns the index page and its data
@@ -37,7 +37,7 @@ def pick_up_lines():
     title ='Pick Up Lines'
 
     pitches= Pitch.get_all_pitches()
-    return render_template('pick_up_lines.html', title = title, pitches= pitches)
+    return render_template('pick_up_line.html', title = title, pitches= pitches)
 
 @main.route('/promotion/pitches/')
 def promotion():
@@ -101,7 +101,7 @@ def new_pitch():
         new_pitch.save_pitch()
         return redirect(url_for('main.index'))
 
-    return render_template('new_pitch.html', new_pitch_form=form, category=category)
+    return render_template('new_pitch.html', new_pitch_form=form,category=category)
 
 @main.route('/category/<int:id>')
 def category(id):

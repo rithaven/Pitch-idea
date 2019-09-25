@@ -2,6 +2,7 @@ from flask import render_template, redirect,url_for,flash,request
 from . import auth
 from flask_login import login_user, logout_user, login_required
 from ..models import User
+from .forms import LoginForm,RegistrationForm
 from .. import db
 from ..email import mail_message
 
@@ -23,7 +24,7 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(mail = form.email.data, username = form.username.data,password = form.password.data)
+        user = User(email = form.email.data, username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
 

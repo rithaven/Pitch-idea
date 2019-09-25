@@ -5,14 +5,17 @@
        <p>{{pitch.pitch}}</p>
        <br>
        <a href="{{url_for('main.new_comment', id=pitch.id)}}">Add a comment</a>&nbsp;&nbsp;|
-       <a href="{{url_for('main.vew_comments', id=pitch.id)}}">View comment</a>&nbsp;&nbsp;|
+       <a href="{{url_for('main.view_comments', id=pitch.id)}}">View comment</a>&nbsp;&nbsp;|
+       <a href="{{url_for('main.new_comment', id=pitch.id)}}">vote</a>
        
     </div>
-{% endblock%}
+{% endfor%}
 
 {%endmacro %}
 <!--Displaying comments macro-->
-{% macro displayComments %}
+{% macro displayComments(list_of_comments) %}
+{% for comment in list_of_comments %}
+
 <div class="row">
 
        <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
