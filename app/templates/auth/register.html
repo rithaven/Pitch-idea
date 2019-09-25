@@ -3,9 +3,14 @@
 
 {% block content %}
 <div class="col-md-4">
+    <a href="{{url_for('main.index')}}">
+        <button type="button" class="btn btn-primary btn-sm">
+             <span class="glyphicon glyphicon-chevron-left"></span>back
+        </button>
+    </a>
   <div class="col-md-8">
     {{wtf.quick_form(registration_form)}}
-
+    
   </div>
 </div>
 {%endblock%}
