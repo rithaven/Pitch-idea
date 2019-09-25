@@ -3,7 +3,7 @@ from wtforms import StringField,TextAreaField,SubmitField, SelectField, RadioFie
 from wtforms.validators import Required
 
 class CommentsForm(FlaskForm):
-      comment = TextAreaField('Comment', validators=[Required])
+      comment = TextAreaField('Comment', validators=[Required()])
       vote=RadioField('default field arguments', choices=[('1', 'Upvote'),('1', 'DownVote')])
       submit = SubmitField('SUBMIT')
 
