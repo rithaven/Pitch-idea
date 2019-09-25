@@ -1,13 +1,17 @@
 {% extends 'base.html'%}
 {% block styles%}
+{{ super()}}
+<link href="https://fonts.gooleapis.com/css?family=Akronim|Bellefair|joti+One" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{%endblock%}
+{%block content %}
 
   <div class="container">
     <a href="{{url_for('main.index')}}">
       <button type="button" class="btn btn-primary btn-sm">
-           <span class="glyphicon glyphicon-chevron-left"></span>back
+        <span class="glyphicon glyphicon-chevron-left"></span>Back
       </button>
       <h3 style="color:blue;">Comments:</h3>
-
     </a>
     <h6> <span style="font-weight:bolder">Found:</span> &nbsp;,<span style="font-family:Bellefair; font-size:18px;">{{comments| count}} Comments</span></h6>
     <hr>
