@@ -1,20 +1,18 @@
-# [one minute  pitch an idea](https://newshighlight1-k.herokuapp.com/)
-
+# [one minute  pitch app](https://pitches-it1.herokuapp.com/)
+## 26th-september-2019
+## By Ritha
 ## Decription
 
-This is a web site i did for the purpose of helping people  to view news from different sources(web sites) but through one web site. you can open this site and view different kinds of news you want.
+This is an application that allows you to submit one minute pithes depending on the category they like.
 
-with the application, a user will be able to:
+## Getting started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* See various news sources and select the ones they prefer.
-* see the image,description and the time a news article was created.
-* click on article and read the full article on the source website.
 
 ## Prerequisites
 
 You need the following to start working on the project on your local computer:
-
-* ubuntu operating system installed with the following:
+** Have 
 
 
 ```
