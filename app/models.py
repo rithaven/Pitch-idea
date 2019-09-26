@@ -20,6 +20,7 @@ class User(UserMixin, db.Model):
     profile_pic_path = db.Column(db.String())
     password_hash = db.Column(db.String(255))
     pass_secure = db.Column(db.String(255))
+    
     pitch = db.relationship('Pitch',backref = 'users',lazy="dynamic")
 
     def save_comment(self):

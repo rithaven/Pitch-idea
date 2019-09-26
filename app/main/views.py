@@ -88,7 +88,7 @@ def new_pitch():
     Function that creates new pitches
     '''
 
-    PitchForm()
+    form = PitchForm()
 
     if category is None:
         abort(404)
