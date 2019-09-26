@@ -25,6 +25,7 @@ $ git clone<repository_url>
 
 ## Build & Deployment
  You need to have fully cloned it to run locally.
+ $./start.sh
 ## Technologies Used
 * Python v3.6
 * Boostrap
