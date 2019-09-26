@@ -13,34 +13,37 @@
       <span style="font-size:40px; font-family: 'Akronim', cursive;">one minute Pitch</span>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-            <a href="{{url_for('main.interview')}}" style="font-family: 'joti One', cursive; font-size:20px;">
-              <br>
-              Interview Pitches
+            <p><u>Click on these  Categories to add Pitch</u></p>
+            <ul style="list-style-type:cicrle;">
+            <a href="{{url_for('main.interview')}}" style="font-family: 'joti One', cursive; font-size:17px;">
+            
+             <li> Discussion Pitches</li>
             </a>
             <br>
-            <a href="{{url_for('main.pick_up_lines')}}" style="font-family: 'joti One', cursive; font-size:20px;">
-              <br>
-              Pick Up Lines
+            <a href="{{url_for('main.pick_up_lines')}}" style="font-family: 'joti One', cursive; font-size:17px;">
+          
+            <li>Pick up lines</li>
             </a>
             <br>
-            <a href="{{url_for('main.promotion')}}" style="font-family: 'joti One', cursive; font-size:20px;">
-              Promotion Pitches
+            <a href="{{url_for('main.promotion')}}" style="font-family: 'joti One', cursive; font-size:17px;">
+            <li>Promotion Pitches</li>
             </a>
-            <br>
-            <a href="{{url_for('main.product')}}" style="font-family: 'joti One', cursive; font-size:20px;">
+           
+            <a href="{{url_for('main.product')}}" style="font-family: 'joti One', cursive; font-size:17px;">
              <br>
-             Product Pitches
+            <li> Product Pitches</li>
             </a>
-            <br>
+            </ul>
+            
     
     </div>
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
       <div class="panel style=" style="border: 3px solid #f2f2f2; padding:20px; margin-top:10px;">
-      <p style="font-family: 'Bellefair', serif; font-size: 20px;"> Write your one minute in any of the categories bellow and comment on it. you can also vote on Pitches posted</p>
+      <p style="font-family: 'Bellefair', serif; font-size: 30px;"> Write your one minute in any of the categories bellow and comment on it. you can also vote on Pitches posted.</p>
      <div style="text-align:center;">
       <a href="{{url_for('main.new_pitch')}}">
         <br>
-        <span> Add a new Pitch</span>
+      <span> Add a new Pitch</span>
       </a>
     </div>
     </div>
@@ -48,7 +51,9 @@
 
 </hr>
    <div class="all-pitches">
-     <span>All pitches are displayed below</span>
+     <span>ALL PITCHES ARE DISPALYED BELOW</span>
+   <br>
+   <br>
      {{macro.displayPitches(pitches)}}
    </div>
 </div>

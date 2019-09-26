@@ -131,7 +131,7 @@ def new_comment(id):
 @login_required
 def update_pic(uname):
     user = User.query.filter - by(username = uname).first()
-    if 'photo' in request.filter:
+    if 'photo' in request.files:
       filename = photos.save(request.files['photo'])
       path = f'photos/{filename}'
       user.profile_pic_path = path
@@ -145,17 +145,25 @@ def profile(uname):
     if user is None:
         abort(404)
 
-        form = UpdateProfile()
+    return render_template('profile/profile.html', user = user)
+@main.route('/user/<uname>/update',methods = ['GET','POST'])
+@login_required
+def update_profile(uname):
+    user = User.query.filter_by(username = uname).first()
+    if user is None:
+        abort(404)
+
+    form = UpdateProfile()
 
     if form.validate_on_submit():
         user.bio = form.bio.data
 
         db.session.add(user)
-        dd.session.commit()
+        db.session.commit()
 
-    return redirect(url_for('.profile', uname = user.username))
-    return render_template('profile/update.html', form = form)
+        return redirect(url_for('.profile',uname=user.username))
 
+    return render_template('profile/update.html',form =form)
 @main.route('/view/comment/<int:id>')
 def view_comments(id):
     '''

@@ -13,7 +13,7 @@
 <div class="navbar-collapse collapse">
   <ul class="nav navbar-nav navbar-right">
     {% if current_user.is_authenticated %}
-    <li><a href="{{url_for('main.profile', uname=current_user.username)}}" style="color:black; font-weight:bolder;"></a></li>
+    <li><a href="{{url_for('main.profile', uname=current_user.username)}}" style="color:black; font-weight:bolder;">Profile</a></li>
     <li><a href="{{url_for('auth.logout')}}" style="color:black; font-weight:bolder">Sign out</a></li>
     {% else %}
     <li><a href="{{url_for('auth.login')}}" style="color:black; font-weight:bolder;">Log in</a></li>
